@@ -4,12 +4,12 @@ from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'templates/home.html')
 
 def room(request, room):
     username = request.GET.get('username')
     room_details = Room.objects.get(name=room)
-    return render(request, 'room.html', {
+    return render(request, 'templates/room.html', {
         'username': username,
         'room': room,
         'room_details': room_details
